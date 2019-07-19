@@ -4,4 +4,6 @@ from django.urls import include, path
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
+    path('quickstart/', include('quickstart.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
