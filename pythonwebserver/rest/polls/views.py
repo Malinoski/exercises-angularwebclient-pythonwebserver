@@ -56,11 +56,11 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
-'''
+
 class QuestionViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint that allows elements to be viewed or edited.
     """
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
-'''
+
