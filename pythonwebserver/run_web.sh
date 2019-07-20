@@ -3,7 +3,7 @@
 cd rest/
 python manage.py migrate
 
-# Create superuser
+# Create superuser (https://stackoverflow.com/questions/6244382/how-to-automate-createsuperuser-on-django)
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
 
 # Start server

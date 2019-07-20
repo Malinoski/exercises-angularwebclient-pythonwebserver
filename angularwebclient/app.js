@@ -19,5 +19,6 @@ app.use(express.static(path));
 app.use("/", router);
 
 app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+  console.log('Container app  listening on port '+PORT+'!')
+  console.log('Container host listening on port 8002!')
 })
