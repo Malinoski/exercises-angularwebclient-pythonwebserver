@@ -11,18 +11,16 @@ angular.module('myApp.polls', ['ngRoute'])
 
 .controller('PollsCtrl', ['$scope', '$http', function($scope, $http) {
 	
-	$scope.users = null;
 	$scope.polls = null;
 	
 	$http({
 		method: 'GET',
-		url: 'http://127.0.0.1:8001/quickstart/users/'
+		url: 'http://127.0.0.1:8001/polls/questions/'
 	}).then(function successCallback(response) {
 		console.log(response);
-		$scope.users = response.data.results;
+		$scope.polls = response.data.results;
 	}, function errorCallback(response) {
 		  console.log(response);
-	});
-	
+	});	
 	
 }]);

@@ -1,7 +1,7 @@
 <p>This is the partial for polls.</p>
 
-<code>users: {{polls}}</code>
+<code>Polls: {{polls}}</code>
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="user in users">Name:{{user.username}} | email:{{user.email}}</li>  
+  <li class="list-group-item" ng-repeat="poll in polls">Text {{poll.question_text}}, date {{poll.pub_date}}</li>  
 </ul>
