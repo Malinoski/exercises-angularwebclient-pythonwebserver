@@ -6,20 +6,22 @@
 ```
 git clone https://github.com/Malinoski/exercises-angularwebclient-pythonwebserver.git
 cd exercises-angularwebclient-pythonwebserver
-'''
+```
 
 ### Web Server
 ```
 cd pythonwebserver/
 docker-compose up -d 
-# Access http://localhost:8001/admin
-cd ..
 ```
 
+Access http://localhost:8001/admin
+
 ### Web Client
+
 ```
 cd angularwebclient/
 docker-compose up -d
-# Access http://localhost:8002
-
 ```
+
+Access http://localhost:8002
+
