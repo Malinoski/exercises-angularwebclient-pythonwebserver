@@ -1,0 +1,11 @@
+# This file is used run/config services inside the docker container
+# (such as a postgres configuration or run a web application)
+
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: ["./run_web.sh"]
+    ports:
+      - "8001:8000" # HOST_PORT:CONTAINER_PORT
