@@ -1,6 +1,8 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
+from rest_framework import viewsets
 from .models import Question
+from .serializers import QuestionSerializer
 
 
 def index(request):
@@ -10,9 +12,13 @@ def index(request):
 
     # # Display 5 elements
     # Get latest 5 elements
-    #     latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # output = ', '.join([q.question_text for q in latest_question_list])
     # return HttpResponse(output)
+
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
 
     # # Display 5 elements in a template
     # # Get latest 5 elements
@@ -25,9 +31,9 @@ def index(request):
     # return HttpResponse(template.render(context, request))
 
     # # Display 5 elements in a template in a compact way
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list}
-    return render(request, 'polls/index.html', context)
+    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    # context = {'latest_question_list': latest_question_list}
+    # return render(request, 'polls/index.html', context)
 
 
 def detail(request, question_id):
@@ -50,3 +56,11 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
+'''
+class QuestionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+'''

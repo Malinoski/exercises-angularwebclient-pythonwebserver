@@ -11,6 +11,7 @@ angular.module('myApp.polls', ['ngRoute'])
 
 .controller('PollsCtrl', ['$scope', '$http', function($scope, $http) {
 	
+	$scope.users = null;
 	$scope.polls = null;
 	
 	$http({
@@ -18,7 +19,7 @@ angular.module('myApp.polls', ['ngRoute'])
 		url: 'http://127.0.0.1:8001/quickstart/users/'
 	}).then(function successCallback(response) {
 		console.log(response);
-		$scope.polls = response.data.results;
+		$scope.users = response.data.results;
 	}, function errorCallback(response) {
 		  console.log(response);
 	});
