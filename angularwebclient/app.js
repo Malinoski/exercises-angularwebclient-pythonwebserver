@@ -3,7 +3,7 @@ var app = express();
 var router = express.Router();
 
 var path = __dirname + '/app/';
-const PORT = 8080;
+const PORT = 8002;
 const HOST = '0.0.0.0';
 
 router.use(function (req,res,next) {
@@ -18,7 +18,6 @@ router.get("/",function(req,res){
 app.use(express.static(path));
 app.use("/", router);
 
-app.listen(8080, function () {
-  console.log('Container app  listening on port '+PORT+'!')
-  console.log('Container host listening on port 8002!')
+app.listen(8002, function () {
+  console.log('Web client app listening on port '+PORT+'!')  
 })
