@@ -14,10 +14,11 @@ urlpatterns = [
     # our own view
     # path('', views.index, name='index'),
 
-    path('', include(router.urls)),
+    # Return a nice automatic rest service
+    # path('', include(router.urls)),
 
     # Generic view
-    path('app/', views.IndexView.as_view(), name='index'),
+    path('', views.IndexView.as_view(), name='index'),
 
     # # ex: /polls/5/
 
@@ -25,7 +26,7 @@ urlpatterns = [
     # path('<int:question_id>/', views.detail, name='detail'),
 
     # Generic view
-    path('app/<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
 
     # # ex: /polls/5/results/
 
@@ -33,7 +34,7 @@ urlpatterns = [
     # path('<int:question_id>/results/', views.results, name='results'),
 
     # Generic view
-    path('app/<int:pk>/results/', views.ResultsView.as_view(), name='results'),
+    path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
 
     # # ex: /polls/5/vote/
 
@@ -41,7 +42,7 @@ urlpatterns = [
     # path('<int:question_id>/vote/', views.vote, name='vote'),
 
     # Generic view
-    path('app/<int:question_id>/vote/', views.vote, name='vote'),
+    path('<int:question_id>/vote/', views.vote, name='vote'),
 
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
