@@ -22,5 +22,5 @@ cd angularwebclient/
 docker-compose up -d
 ```
 
-Access http://localhost:8002
+Access http://localhost:8002 (user: admin, pass:admin)
 
