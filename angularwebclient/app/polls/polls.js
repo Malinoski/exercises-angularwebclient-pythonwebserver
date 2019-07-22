@@ -13,14 +13,16 @@ angular.module('myApp.polls', ['ngRoute'])
 	
 	$scope.polls = null;
 	
+	/**
 	$http({
-		method: 'GET',
-		url: 'http://127.0.0.1:8001/polls/questions/'
+		method: 'GET', 
+		url: 'http://127.0.0.1:8001/polls/?format=json'
 	}).then(function successCallback(response) {
 		console.log(response);
 		$scope.polls = response.data.results;
 	}, function errorCallback(response) {
 		  console.log(response);
-	});	
+	});
+	*/	
 	
 }]);
