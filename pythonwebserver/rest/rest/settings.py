@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'corsheaders',
     'rest_framework',
+    'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [

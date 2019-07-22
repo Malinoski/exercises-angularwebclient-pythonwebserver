@@ -10,15 +10,53 @@
 pip install django
 pip install djangorestframework
 pip install django-cors-headers
+pip install pygments
 ```
 
 * Create the project, app, etc..
 ```
 mkdir [PYCHARM_WEBSERVER_PROJECT_NAME]
 cd [PYCHARM_WEBSERVER_PROJECT_NAME]
+
+# Install some stuffs
 django-admin startproject [PROJECT_NAME]
 python manage.py startapp [MY_APP]
-...
+
+# Create some code (a model)
+# ....
+
+# Sync models with database for the first time, ex.: 
+python manage.py makemigrations polls 
+python manage.py makemigrations snippets 
+python manage.py migrate
+```
+
+* Tests libs (it will create a db just for tests)
+    
+```
+cd [PROJECT_NAME]
+python manage.py test polls
+```
+    
+* Test as a web client (it will NOT create a db like before)
+    
+```
+# Go to project python console
+cd [PROJECT_NAME]
+python manage.py shell
+
+# Prepare e run tests
+from django.test.utils import setup_test_environment
+setup_test_environment()
+from django.test import Client
+client = Client()
+response = client.get('/') # The call is http://localhost:8001/
+response.status_code # 200
+response.content # b'The web service works!' 
+from django.urls import reverse
+response = client.get(reverse('polls:index')) 
+response.content # html elements
+response.context['latest_question_list'] # html elements
 ```
 
 * Run the server

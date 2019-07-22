@@ -16,6 +16,8 @@ http://localhost:8001/admin (user: admin, pass:admin)
 
 http://localhost:8001/quickstart/users/?format=json
 
+http://localhost:8001/snippets/2/
+
 http://localhost:8001/polls (no json)
 
 * Deploy the web client
