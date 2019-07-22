@@ -5,11 +5,12 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.polls',
   'myApp.users',
+  'myApp.snippets',
   'myApp.view1',
   'myApp.view2',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-  $routeProvider.otherwise({redirectTo: '/users'});
+  $routeProvider.otherwise({redirectTo: '/snippets'});
 }]);
