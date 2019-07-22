@@ -12,7 +12,11 @@ cd pythonwebserver/
 docker-compose up -d 
 ```
 
-Access http://localhost:8001/admin (user: admin, pass:admin)
+http://localhost:8001/admin (user: admin, pass:admin)
+
+http://localhost:8001/polls/app/ (internal app)
+
+http://localhost:8001/polls/questions/?format=json (json)
 
 * Deploy the web client
 
@@ -22,5 +26,5 @@ cd angularwebclient/
 docker-compose up -d
 ```
 
-Access http://localhost:8002
+http://localhost:8002
 
