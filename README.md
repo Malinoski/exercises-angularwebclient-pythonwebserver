@@ -14,9 +14,9 @@ docker-compose up -d
 
 http://localhost:8001/admin (user: admin, pass:admin)
 
-http://localhost:8001/polls/app/ (internal app)
+http://127.0.0.1:8001/quickstart/users/?format=json
 
-http://localhost:8001/polls/questions/?format=json (json)
+http://localhost:8001/polls (no json)
 
 * Deploy the web client
 
