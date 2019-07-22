@@ -22,10 +22,10 @@ cd [PYCHARM_WEBSERVER_PROJECT_NAME]
 django-admin startproject [PROJECT_NAME]
 python manage.py startapp [MY_APP]
 
-# Create some code (a model)
+# Create some code (models, views, urls, etc..)
 # ....
 
-# Sync models with database for the first time, ex.: 
+# Do not forget to sync models with database for the first time, ex.: 
 python manage.py makemigrations polls 
 python manage.py makemigrations snippets 
 python manage.py migrate
@@ -45,7 +45,7 @@ python manage.py test polls
 cd [PROJECT_NAME]
 python manage.py shell
 
-# Prepare e run tests
+# Prepare and run tests
 from django.test.utils import setup_test_environment
 setup_test_environment()
 from django.test import Client
