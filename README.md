@@ -12,7 +12,7 @@ cd pythonwebserver/
 docker-compose up -d 
 ```
 
-Access http://localhost:8001/admin
+Access http://localhost:8001/admin (user: admin, pass:admin)
 
 * Deploy the web client
 
@@ -22,5 +22,5 @@ cd angularwebclient/
 docker-compose up -d
 ```
 
-Access http://localhost:8002 (user: admin, pass:admin)
+Access http://localhost:8002
 
