@@ -8,15 +8,40 @@ router.register(r'questions', views.QuestionViewSet)
 app_name = 'polls'
 
 urlpatterns = [
-    # ex: /polls/
+
+    # # /polls/
+
+    # our own view
     # path('', views.index, name='index'),
+
     path('', include(router.urls)),
-    # ex: /polls/5/
-    path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
-    #
+
+    # Generic view
+    path('app/', views.IndexView.as_view(), name='index'),
+
+    # # ex: /polls/5/
+
+    # Our own view
+    # path('<int:question_id>/', views.detail, name='detail'),
+
+    # Generic view
+    path('app/<int:pk>/', views.DetailView.as_view(), name='detail'),
+
+    # # ex: /polls/5/results/
+
+    # Our own view
+    # path('<int:question_id>/results/', views.results, name='results'),
+
+    # Generic view
+    path('app/<int:pk>/results/', views.ResultsView.as_view(), name='results'),
+
+    # # ex: /polls/5/vote/
+
+    # Our own view
+    # path('<int:question_id>/vote/', views.vote, name='vote'),
+
+    # Generic view
+    path('app/<int:question_id>/vote/', views.vote, name='vote'),
+
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
