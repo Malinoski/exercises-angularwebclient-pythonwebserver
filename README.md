@@ -22,6 +22,8 @@ http://localhost:8001/snippets.json
 
 http://localhost:8001/snippets/2/
 
+http://localhost:8001/snippets/1/highlight/
+
 http://localhost:8001/snippets/2/?format=json
 
 http://localhost:8001/polls (no json)
