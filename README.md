@@ -16,7 +16,13 @@ http://localhost:8001/admin (user: admin, pass:admin)
 
 http://localhost:8001/quickstart/users/?format=json
 
+http://localhost:8001/snippets.api
+
+http://localhost:8001/snippets.json
+
 http://localhost:8001/snippets/2/
+
+http://localhost:8001/snippets/2/?format=json
 
 http://localhost:8001/polls (no json)
 
