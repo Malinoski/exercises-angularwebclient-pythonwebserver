@@ -31,11 +31,12 @@ python manage.py makemigrations snippets
 python manage.py migrate
 ```
 
-* Tests libs (it will create a db just for tests)
+* Tests libs (it will create and destroy a new db for the tests)
     
 ```
 cd [PROJECT_NAME]
 python manage.py test polls
+python manage.py test snippets
 ```
     
 * Test as a web client (it will NOT create a db like before)

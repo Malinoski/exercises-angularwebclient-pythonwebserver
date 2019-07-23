@@ -1,12 +1,13 @@
 # Install using Docker 
 
-* Get the code
+## Get the code
 ```
 git clone https://github.com/Malinoski/exercises-angularwebclient-pythonwebserver.git
 cd exercises-angularwebclient-pythonwebserver
 ```
 
-* Deploy the web server
+## Deploy the web server 
+
 ```
 cd pythonwebserver/
 docker-compose up -d 
@@ -28,7 +29,7 @@ http://localhost:8001/snippets/2/?format=json
 
 http://localhost:8001/polls (no json)
 
-* Deploy the web client
+## Deploy the web client
 
 ```
 cd ..
