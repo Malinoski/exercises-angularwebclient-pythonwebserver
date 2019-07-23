@@ -1,6 +1,5 @@
 from .models import Snippet
 from .serializers import SnippetSerializer
-from rest_framework import mixins
 from rest_framework import generics
 
 # # Function based views with implicit use of JSON and HTTP response code
@@ -63,6 +62,7 @@ class SnippetList(APIView):
 
 # # Class based view with automatic operation, like list/create/update for http request, like get/post/put
 # # (https://www.django-rest-framework.org/tutorial/3-class-based-views/)
+"""
 class SnippetList(mixins.ListModelMixin,
                   mixins.CreateModelMixin,
                   generics.GenericAPIView):
@@ -74,22 +74,19 @@ class SnippetList(mixins.ListModelMixin,
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+"""
 
 
-# # Class based view with automatic operation, like list/create/update for http request, like get/post/put
+# # Class based view with high level automatic operation, like list/create/update for http request, like get/post/put
 # # (https://www.django-rest-framework.org/tutorial/3-class-based-views/)
-class SnippetDetail(mixins.RetrieveModelMixin,
-                    mixins.UpdateModelMixin,
-                    mixins.DestroyModelMixin,
-                    generics.GenericAPIView):
+
+class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
 
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
 
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
+
