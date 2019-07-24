@@ -35,11 +35,10 @@ python manage.py migrate
     
 ```
 cd [PROJECT_NAME]
-python manage.py test polls
-python manage.py test snippets
+python manage.py test 
 ```
     
-* Test as a web client (it will NOT create a db like before)
+* Test on python web client (this will simulate a web client. This will NOT create a db like before)
     
 ```
 # Go to project python console
@@ -60,26 +59,20 @@ response.content # html elements
 response.context['latest_question_list'] # html elements
 ```
 
+* Test on terminal
+
+```
+# curl (get the token and use the token)
+curl -d "username=admin&password=admin" -X POST http://127.0.0.1:8001/core/api-token-auth/
+curl http://127.0.0.1:8001/core/hello -H 'Authorization: Token $TOKEN'
+
+# httpi (get the token and use the token)
+http post http://127.0.0.1:8001/core/api-token-auth/ username=admin password=admin
+http http://127.0.0.1:8001/core/hello 'Authorization: Token $TOKEN'
+```
+
 * Run the server
 ```
 cd [PROJECT_NAME]
 python manage.py runserver 8001
-```
-
-# Angular web client
-
-* Open the terminal and create the project
-```
-mkdir [ECLIPSE_WEBCLIENT_PROJECT_NAME]
-cd [ECLIPSE_WEBCLIENT_PROJECT_NAME]
-git clone --depth=1 https://github.com/angular/angular-seed.git angularwebclient
-npm install
-```
-
-* Open Eclipse and create a simple project with the previous code
-
-* Run the web client
-```
-cd [ECLIPSE_WEBCLIENT_PROJECT_NAME]
-node app.js
 ```

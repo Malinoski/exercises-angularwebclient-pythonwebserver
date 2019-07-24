@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
     path('quickstart/', include('quickstart.urls')),
+    path('core/', include('core.urls')),
 ]
